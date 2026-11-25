@@ -19,7 +19,7 @@ Rohus Suazo
 <br>
 -Cómo se conectan entre sí
 <br>
--Entorno Simulados a utilizar
+-Bibliotecas a utilizar para Entorno Simulado
 <br>
 -Script MySQL
 <br>
@@ -57,7 +57,7 @@ Demo IoT, como se dijo antes, será un entorno simulado que funcionará con un s
 Los dispositivos simulados generan lecturas que el servidor (Express con Socket.IO) envía en tiempo real al panel hecho en React. Al mismo tiempo, el servidor guarda esos datos en MySQL usando Knex, para que el historial no se pierda cuando se cierra la conexión. Así el tiempo real lo maneja el socket y el almacenamiento lo maneja la base de datos.
 <br>
 
-**Entorno Simulados a utilizar**
+**Bibliotecas a utilizar para Entorno Simulado**
 <br>
 <table> <tr> <td valign="top" width="30%"> <a href="https://www.tremor.so/docs/getting-started/installation"><strong>Tremor</strong></a> </td> <td valign="top" width="35%"> Pros;<br> -Dashboard con buena pinta en muy poco código.<br> -Tarjetas de KPI, badges de estado y gráficos vienen listos.<br> -Ideal para un panel de control rápido. </td> <td valign="top" width="35%"> Contras;<br> -Los gráficos son menos personalizables (usa Recharts por debajo).<br> -Necesita tener Tailwind configurado.<br> -Puede tener problemas de compatibilidad con versiones nuevas de React. </td> </tr> <tr> <td valign="top"> <a href="https://www.chartjs.org/docs/latest/getting-started/installation.html"><strong>Chart.js</strong></a> </td> <td valign="top"> Pros;<br> -Muy sencillo y muy documentado.<br> -Liviano. </td> <td valign="top"> Contras;<br> -Solo gráficos: no incluye tarjetas, tablas ni layout.<br> -Con datos en tiempo real y muchos puntos puede volverse más lento.<br> -Estilo más básico por defecto. </td> </tr> </table>
 
