@@ -23,13 +23,15 @@ Rohus Suazo
 <br>
 -Script MySQL
 <br>
+-Diagrama ER
+<br>
 -Conclusión
 <br>
 <br>
 
 **Introducción**
 <br>
-Demo IoT es una sección del sitio web de I&T, que todavía está en desarrollo. La idea es que los clientes puedan probar, de forma simulada e interactiva, cómo se controlan dispositivos IoT desde una interfaz web, con un panel de control integrado visualmente al resto del sitio. Este documento explica cómo vamos a trabajar el proyecto: el repositorio, el README, las tecnologías que se van a usar y las opciones que estamos evaluando para el entorno simulado.
+Demo IoT es una sección del sitio web de I&T, que todavía está en desarrollo. La idea es que los clientes puedan probar, de forma simulada e interactiva, cómo se controlan dispositivos IoT desde una interfaz web, con un panel de control integrado visualmente al resto del sitio. Este documento explica cómo vamos a trabajar el proyecto: el repositorio, el README, las tecnologías que se van a usar, entre otras cosas.
 <br>
 
 **Repositorio GIT con Colaboradores**
@@ -151,10 +153,15 @@ CREATE TABLE eventos (
 </td> </tr> </table>
 <br>
 
+**Diagrama ER**
+<br>
+<img width="1449" height="418" alt="Captura de pantalla 2026-11-25 120146" src="https://github.com/user-attachments/assets/a20bb467-91cc-466f-9b25-8bcf2d2f7978" />
+<br>
+
 **Conclusión**
 <br>
 Con lo visto hasta ahora, la base del proyecto queda definida: Socket.IO para la comunicación en tiempo real, Express y Node.js para el servidor, React con Vite para el panel de control, y Knex con MySQL para guardar los datos.<br>
 <br>
 La base de datos se diseñó a partir del ejemplo propuesto por el supervisor jefe, con tres tablas principales: dispositivos (catálogo con código, nombre, tipo, unidad y ubicación), estados (valor actual de cada dispositivo y si está conectado o desconectado) y eventos (historial de lecturas y acciones, con valor anterior y nuevo, origen y fecha). Para saber qué visitante realizó cada acción, la tabla de eventos incluye el campo id_sesion_eve, un texto que el backend genera como identificador aleatorio para cada visitante. Así no se necesita un sistema de login ni una tabla adicional de sesiones, lo que mantiene el diseño simple y adecuado para una demostración. Además, las relaciones usan ON DELETE CASCADE, de modo que al eliminar un dispositivo también se limpian sus estados y eventos asociados.<br>
 <br>
-Se utilizaran las siguientes bibliotecas para el entorno simulado; Chart.js, porque es sencilla, está muy documentada y alcanza para mostrar los datos en vivo, TanStack Table se puede sumar para la lista de dispositivos.
+Se utilizarán las siguientes bibliotecas para el entorno simulado; Chart.js, porque es sencilla, está muy documentada y alcanza para mostrar los datos en vivo, TanStack Table se puede sumar para la lista de dispositivos.
